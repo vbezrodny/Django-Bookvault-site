@@ -1,0 +1,154 @@
+{% extends "template.html" %}
+
+{% load static %}
+
+{% block title %} Каталог книг | BookVault {% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/catalog.css'%}">
+{% endblock styles %}
+
+{% block content %}
+    <!-- Заголовок каталога -->
+    <section class="catalog-header py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-start md:items-end justify-between">
+                <div>
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Каталог книг</h1>
+                    <p class="text-gray-600">Найдено [[ filteredBooks.length ]] книг</p>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <div class="relative">
+                        <select v-model="sortBy" class="appearance-none bg-white border border-gray-300 rounded-lg pl-4 pr-10 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                            <option value="popular">По популярности</option>
+                            <option value="newest">Сначала новые</option>
+                            <option value="price-low">Цена: по возрастанию</option>
+                            <option value="price-high">Цена: по убыванию</option>
+                            <option value="rating">По рейтингу</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Основное содержимое каталога -->
+    <section class="py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-8">
+                <!-- Боковая панель фильтров -->
+                <div class="w-full md:w-1/4">
+                    <div class="filter-sidebar p-6 sticky top-24">
+                        <div class="mb-8">
+                            <h3 class="font-medium text-gray-800 mb-4">Категории</h3>
+                            <div class="category-container">
+                                <div v-for="category in categories" :key="category.id" class="category-checkbox">
+                                    <input type="checkbox" :id="'category-'+category.id" v-model="selectedCategories" :value="category.id" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
+                                    <label :for="'category-'+category.id" class="ml-2 text-gray-700">
+                                        [[ category.name ]] <span class="text-gray-500">( [[ category.count ]] )</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-8">
+                            <h3 class="font-medium text-gray-800 mb-4">Цена</h3>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm text-gray-600">от $[[ minPrice ]]</span>
+                                <span class="text-sm text-gray-600">до $[[ maxPrice ]]</span>
+                            </div>
+                            <input type="range" v-model="priceRange" min="0" max="50" step="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                            <div class="flex justify-between mt-2">
+                                <span class="text-xs text-gray-500">$0</span>
+                                <span class="text-xs text-gray-500">$50+</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-8">
+                            <h3 class="font-medium text-gray-800 mb-4">Рейтинг</h3>
+                            <div class="space-y-2">
+                                <div v-for="rating in [4, 3, 2, 1]" :key="rating" class="rating-checkbox">
+                                    <input type="checkbox" :id="'rating-'+rating" v-model="selectedRatings" :value="rating" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
+                                    <label :for="'rating-'+rating" class="rating-stars">
+                                        <i v-for="star in 5" :key="star"
+                                           :class="star <= rating ? 'fas fa-star text-yellow-400' : 'far fa-star text-yellow-400'"></i>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button @click="resetFilters" class="w-full py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition">
+                            Сбросить фильтры
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Сетка книг -->
+                <div class="w-full md:w-3/4">
+                    <div v-if="filteredBooks.length > 0" class="catalog-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div v-for="book in paginatedBooks" :key="book.id" class="book-card bg-white rounded-xl overflow-hidden">
+                            <div class="relative">
+                                <img :src="book.image" :alt="book.title" class="w-full h-48 object-cover">
+                                <div class="absolute top-2 right-2 bg-white/90 backdrop-blur-sm rounded-full px-2 py-1 text-xs font-medium">
+                                    $[[ book.price ]]
+                                </div>
+                                <div v-if="book.isNew" class="absolute top-2 left-2 bg-indigo-600 text-white text-xs font-bold px-2 py-1 rounded">
+                                    NEW
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-bold text-gray-800 mb-1">[[ book.title ]]</h3>
+                                <p class="text-sm text-gray-500 mb-2">[[ book.author ]]</p>
+                                <div class="flex items-center mb-3">
+                                    <div class="flex text-yellow-400">
+                                        <i v-for="star in 5" :key="star"
+                                           :class="star <= book.rating ? 'fas fa-star' : 'far fa-star'"></i>
+                                    </div>
+                                    <span class="text-xs text-gray-500 ml-1">([[ book.reviews ]])</span>
+                                </div>
+                                <button @click="addToCart(book)" class="w-full py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+                                    В корзину
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div v-else class="bg-white rounded-xl p-12 text-center">
+                        <i class="fas fa-book-open text-5xl text-gray-300 mb-4"></i>
+                        <h3 class="text-xl font-medium text-gray-800 mb-2">Книги не найдены</h3>
+                        <p class="text-gray-600 mb-6">Попробуйте изменить параметры фильтрации</p>
+                        <button @click="resetFilters" class="px-6 py=2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+                            Сбросить фильтры
+                        </button>
+                    </div>
+
+                    <!-- Пагинация -->
+                    <div v-if="filteredBooks.length > 0" class="flex justify-center mt-12">
+                        <nav class="inline-flex rounded-md shadow-sm -space-x-px">
+                            <button @click="prevPage" :disabled="currentPage === 1"
+                                    :class="{'opacity-50 cursor-not-allowed': currentPage === 1, 'hover:bg-gray-50': currentPage > 1}"
+                                    class="pagination-btn relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+
+                            <button v-for="page in visiblePages" :key="page" @click="goToPage(page)"
+                                    :class="{'z-10 bg-indigo-50 border-indigo-500 text-indigo-600': currentPage === page, 'bg-white border-gray-300 text-gray-500 hover:bg-gray-50': currentPage !== page}"
+                                    class="pagination-btn relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                                [[ page ]]
+                            </button>
+
+                            <button @click="nextPage" :disabled="currentPage === totalPages"
+                                    :class="{'opacity-50 cursor-not-allowed': currentPage === totalPages, 'hover:bg-gray-50': currentPage < totalPages}"
+                                    class="pagination-btn relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

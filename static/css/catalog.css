@@ -1,0 +1,95 @@
+/* Стили для каталога */
+.catalog-header {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+}
+
+.filter-sidebar {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.pagination-btn {
+    transition: all 0.2s ease;
+}
+
+.pagination-btn:hover:not(.active) {
+    background-color: #f3f4f6;
+}
+
+.pagination-btn.active {
+    background-color: #6366f1;
+    color: white;
+}
+
+/* Обновленные стили для чекбоксов категорий */
+.category-container {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+.category-checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    width: 100%;
+    white-space: normal;
+}
+
+.category-checkbox input {
+    flex-shrink: 0;
+    margin-right: 8px;
+}
+
+.category-checkbox label {
+    white-space: normal;
+    word-break: break-word;
+    font-size: 14px;
+    line-height: 1.4;
+    width: 100%;
+}
+
+/* Стили для скроллбара */
+.category-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.category-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.category-container::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.category-container::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Стили для рейтинга */
+.rating-checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.rating-checkbox input {
+    margin-right: 8px;
+}
+
+.rating-stars {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .catalog-grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .filter-sidebar {
+        width: 100%;
+    }
+}
