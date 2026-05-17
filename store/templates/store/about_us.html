@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block title %} О нас | BookVault {% endblock %}
+{% block title %} О нас | BioVault {% endblock %}
 
 {% block styles %}
     <link rel="stylesheet" href="{% static 'css/about.css'%}">
@@ -14,8 +14,8 @@
         <div class="container mx-auto px-8">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-8 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">О BookVault</h1>
-                    <p class="text-xl text-gray-600 mb-6">Мы создаем лучшее место для чтения и покупки книг в цифровую эпоху</p>
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">О BioVault</h1>
+                    <p class="text-xl text-gray-600 mb-6">Мы собираем понятные инструменты для биохакинга, здоровья и осознанной профилактики</p>
                     <div class="flex space-x-4">
                         <a href="#mission" class="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
                             Наша миссия
@@ -27,7 +27,7 @@
                 </div>
                 <div class="mx-auto md:w-1/3">
                     <img src="{% static 'images/about_us.avif' %}"
-                         alt="Книги на полке" class="rounded-xl shadow-lg w-full">
+                         alt="Лаборатория здоровья" class="rounded-xl shadow-lg w-full">
                 </div>
             </div>
         </div>
@@ -39,15 +39,15 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                 <div class="stat-card rounded-xl p-6 text-center">
                     <div class="text-4xl font-bold text-indigo-600 mb-2">[[ stats.books ]]+</div>
-                    <div class="text-gray-600">Книг в каталоге</div>
+                    <div class="text-gray-600">Товаров в каталоге</div>
                 </div>
                 <div class="stat-card rounded-xl p-6 text-center">
                     <div class="text-4xl font-bold text-indigo-600 mb-2">[[ stats.users ]]+</div>
-                    <div class="text-gray-600">Довольных читателей</div>
+                    <div class="text-gray-600">Довольных клиентов</div>
                 </div>
                 <div class="stat-card rounded-xl p-6 text-center">
                     <div class="text-4xl font-bold text-indigo-600 mb-2">[[ stats.categories ]]+</div>
-                    <div class="text-gray-600">Категорий книг</div>
+                    <div class="text-gray-600">Категорий здоровья</div>
                 </div>
                 <div class="stat-card rounded-xl p-6 text-center">
                     <div class="text-4xl font-bold text-indigo-600 mb-2">[[ stats.years ]]+</div>
@@ -63,14 +63,14 @@
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-8 md:mb-0 md:pr-10">
                     <img src="{% static 'images/Reading.jpg' %}"
-                         alt="Человек читает книгу" class="rounded-xl shadow-lg w-full">
+                         alt="Человек отслеживает здоровье" class="rounded-xl shadow-lg w-full">
                 </div>
                 <div class="md:w-1/2">
                     <h2 class="text-3xl font-bold text-gray-800 mb-6">Наша миссия</h2>
-                    <p class="text-gray-600 mb-6">BookVault был основан в 2010 году с одной простой целью — сделать чтение доступным и удобным для каждого. В эпоху цифровых технологий мы верим, что книги остаются незаменимым источником знаний, вдохновения и удовольствия.</p>
-                    <p class="text-gray-600 mb-6">Наша платформа объединяет лучшие книги со всего мира в одном месте, предлагая читателям удобный интерфейс, персонализированные рекомендации и мгновенный доступ к тысячам произведений.</p>
+                    <p class="text-gray-600 mb-6">BioVault был основан с простой целью — сделать биохакинг понятным, практичным и безопасным для повседневной жизни.</p>
+                    <p class="text-gray-600 mb-6">Наша платформа объединяет гаджеты, нутрицевтики, домашнюю диагностику и экспертные подборки, чтобы вы могли принимать решения на основе данных.</p>
                     <div class="bg-indigo-50 border-l-4 border-indigo-600 p-4 mb-6">
-                        <p class="text-indigo-800 font-medium">"Книги — это двери, которые открывают перед нами целые миры. Наша задача — помочь вам найти нужную дверь."</p>
+                        <p class="text-indigo-800 font-medium">"Лучший биохакинг начинается не с экстремальных экспериментов, а с понятных метрик, регулярности и заботы о себе."</p>
                     </div>
                     <a href="#" class="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-medium">
                         Узнать больше о нашей философии <i class="fas fa-chevron-right ml-2 text-sm"></i>
@@ -88,32 +88,32 @@
             <div class="relative timeline pl-10 max-w-3xl mx-auto">
                 <div class="relative timeline-item mb-12">
                     <div class="bg-indigo-100 text-indigo-800 font-medium px-3 py-1 rounded-full inline-block mb-3 text-sm">2010</div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Основание BookVault</h3>
-                    <p class="text-gray-600">Небольшая команда энтузиастов начала работу над созданием цифровой библиотеки нового поколения.</p>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Основание BioVault</h3>
+                    <p class="text-gray-600">Команда специалистов по wellness и технологиям начала собирать проверенные решения для здоровья в одном каталоге.</p>
                 </div>
 
                 <div class="relative timeline-item mb-12">
                     <div class="bg-indigo-100 text-indigo-800 font-medium px-3 py-1 rounded-full inline-block mb-3 text-sm">2013</div>
                     <h3 class="text-xl font-bold text-gray-800 mb-2">Первые 1000 пользователей</h3>
-                    <p class="text-gray-600">Наша платформа достигла важной вехи — 1000 активных читателей и 5000 книг в каталоге.</p>
+                    <p class="text-gray-600">Первые клиенты начали использовать трекеры сна, БАДы и домашние тесты как единую систему заботы о себе.</p>
                 </div>
 
                 <div class="relative timeline-item mb-12">
                     <div class="bg-indigo-100 text-indigo-800 font-medium px-3 py-1 rounded-full inline-block mb-3 text-sm">2016</div>
                     <h3 class="text-xl font-bold text-gray-800 mb-2">Запуск мобильного приложения</h3>
-                    <p class="text-gray-600">Чтение стало еще удобнее с нашими приложениями для iOS и Android.</p>
+                    <p class="text-gray-600">Мы добавили персональные подборки под цели: сон, энергия, стресс, спорт и восстановление.</p>
                 </div>
 
                 <div class="relative timeline-item mb-12">
                     <div class="bg-indigo-100 text-indigo-800 font-medium px-3 py-1 rounded-full inline-block mb-3 text-sm">2020</div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">10 лет BookVault</h3>
-                    <p class="text-gray-600">Мы отпраздновали 10-летие компании с более чем 1 миллионом пользователей по всему миру.</p>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Новый уровень сервиса</h3>
+                    <p class="text-gray-600">Каталог вырос до комплексной платформы с товарами, консультациями и понятными сценариями применения.</p>
                 </div>
 
                 <div class="relative timeline-item">
                     <div class="bg-indigo-100 text-indigo-800 font-medium px-3 py-1 rounded-full inline-block mb-3 text-sm">2023</div>
                     <h3 class="text-xl font-bold text-gray-800 mb-2">Новые горизонты</h3>
-                    <p class="text-gray-600">Мы продолжаем развиваться, внедряя новые технологии для улучшения опыта чтения.</p>
+                    <p class="text-gray-600">Мы продолжаем развиваться, добавляя точные трекеры, лабораторные панели и научно обоснованные wellness-решения.</p>
                 </div>
             </div>
         </div>
@@ -124,7 +124,7 @@
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-gray-800 mb-4">Наша команда</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Талантливые и преданные своему делу профессионалы, которые каждый день работают над тем, чтобы сделать BookVault лучше.</p>
+                <p class="text-gray-600 max-w-2xl mx-auto">Специалисты, которые каждый день помогают сделать заботу о здоровье измеримой, понятной и удобной.</p>
             </div>
 
             <div class="team-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -151,10 +151,10 @@
     <section class="py-16 bg-indigo-600 text-white">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl font-bold mb-6">Присоединяйтесь к нашему сообществу</h2>
-            <p class="text-xl mb-8 max-w-2xl mx-auto">Откройте для себя мир книг с BookVault. Начните читать уже сегодня.</p>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Откройте для себя биохакинг с BioVault. Начните отслеживать и улучшать самочувствие уже сегодня.</p>
             <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
                 <a href="#" class="px-8 py-3 bg-white text-indigo-600 rounded-lg font-medium hover:bg-gray-100 transition">
-                    Начать читать
+                    Начать подбор
                 </a>
                 <a href="#" class="px-8 py-3 border border-white text-white rounded-lg font-medium hover:bg-indigo-700 transition">
                     Узнать больше

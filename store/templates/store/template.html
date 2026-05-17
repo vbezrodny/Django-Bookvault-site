@@ -22,9 +22,9 @@
                     <!-- Логотип -->
                     <div class="flex items-center">
                         <div class="w-10 h-10 rounded-full bg-indigo-500 flex items-center justify-center mr-3">
-                            <i class="fas fa-book text-white text-xl"></i>
+                            <i class="fas fa-heartbeat text-white text-xl"></i>
                         </div>
-                        <span class="text-2xl font-bold text-gray-800">BookVault</span>
+                        <span class="text-2xl font-bold text-gray-800">BioVault</span>
                     </div>
 
                     <!-- Навигация -->
@@ -114,7 +114,7 @@
                     <i class="fas fa-times"></i>
                 </button>
 
-                <h2 class="text-2xl font-bold text-gray-800 mb-6">Добро пожаловать в BookVault</h2>
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Добро пожаловать в BioVault</h2>
 
                 <form method="post" action="/accounts/login/" class="space-y-4">
                     {% csrf_token %}
@@ -171,11 +171,11 @@
                     <div class="footer-brand">
                         <div class="flex items-center mb-4">
                             <div class="w-10 h-10 rounded-full bg-indigo-500 flex items-center justify-center mr-3">
-                                <i class="fas fa-book text-white text-xl"></i>
+                                <i class="fas fa-heartbeat text-white text-xl"></i>
                             </div>
-                            <span class="text-2xl font-bold text-white">BookVault</span>
+                            <span class="text-2xl font-bold text-white">BioVault</span>
                         </div>
-                        <p class="mb-4">Ваш лучший выбор для высококачественных электронных книг всех жанров. Мгновенный доступ в любое время и в любом месте.</p>
+                        <p class="mb-4">Ваш проводник в осознанный биохакинг: носимые гаджеты, нутрицевтики, трекеры сна и решения для здоровья в одном месте.</p>
                         <div class="flex space-x-4">
                             <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-indigo-600 transition">
                                 <i class="fab fa-twitter"></i>
@@ -199,7 +199,7 @@
                                 <ul class="space-y-3">
                                     <li><a href="{% url 'home' %}" class="hover:text-white transition">Главная</a></li>
                                     <li><a href="{% url 'about' %}" class="hover:text-white transition">О нас</a></li>
-                                    <li><a href="{% url 'catalog' %}" class="hover:text-white transition">Каталог книг</a></li>
+                                    <li><a href="{% url 'catalog' %}" class="hover:text-white transition">Каталог товаров</a></li>
                                     <li><a href="{% url 'category' %}" class="hover:text-white transition">Категории</a></li>
                                     <li><a href="{% url 'contact' %}" class="hover:text-white transition">Контакты</a></li>
                                 </ul>
@@ -220,7 +220,7 @@
                 </div>
 
                 <div class="border-t border-gray-800 mt-12 pt-8">
-                    <p class="copyright">&copy; 2025 BookVault. Все права защищены.</p>
+                    <p class="copyright">&copy; 2025 BioVault. Все права защищены.</p>
                 </div>
             </div>
         </footer>

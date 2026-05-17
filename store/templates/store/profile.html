@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block title %} Каталог книг | BookVault {% endblock %}
+{% block title %} Профиль | BioVault {% endblock %}
 
 {% block styles %}
     <link rel="stylesheet" href="{% static 'css/profile.css'%}">
@@ -39,8 +39,8 @@
                             <span>Профиль</span>
                         </button>
                         <button @click="setActiveTab('library')" :class="{'bg-indigo-50 text-indigo-700': activeTab === 'library'}" class="w-full flex items-center space-x-3 px-4 py-3 text-left rounded-lg hover:bg-gray-50 transition">
-                            <i class="fas fa-book-open w-5 text-center"></i>
-                            <span>Моя библиотека</span>
+                            <i class="fas fa-heartbeat w-5 text-center"></i>
+                            <span>Мои наборы</span>
                         </button>
                         <button @click="setActiveTab('wishlist')" :class="{'bg-indigo-50 text-indigo-700': activeTab === 'wishlist'}" class="w-full flex items-center space-x-3 px-4 py-3 text-left rounded-lg hover:bg-gray-50 transition">
                             <i class="fas fa-heart w-5 text-center"></i>
@@ -108,7 +108,7 @@
                         </div>
 
                         <div class="mt-6">
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Любимые жанры</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Цели здоровья</label>
                             <div class="flex flex-wrap gap-2">
                                 <span v-for="genre in user.favoriteGenres" :key="genre"
                                       class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">
@@ -131,13 +131,13 @@
                     </div>
                 </div>
 
-                <!-- Контент библиотеки -->
+                <!-- Контент наборов -->
                 <div id="library" class="tab-content" :class="{ 'active': activeTab === 'library' }">
                     <div class="flex justify-between items-center mb-8">
-                        <h2 class="text-2xl font-bold text-gray-800">Моя библиотека</h2>
+                        <h2 class="text-2xl font-bold text-gray-800">Мои наборы</h2>
                         <div class="flex items-center space-x-2">
                             <div class="relative">
-                                <input type="text" placeholder="Поиск в библиотеке..."
+                                <input type="text" placeholder="Поиск в наборах..."
                                        class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                                 <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
                             </div>
@@ -145,7 +145,7 @@
                                 <option>Сортировать по</option>
                                 <option>Дате добавления</option>
                                 <option>Названию</option>
-                                <option>Автору</option>
+                                <option>Категории</option>
                             </select>
                         </div>
                     </div>
@@ -172,7 +172,7 @@
                                 </div>
                                 <div class="mt-4 pt-3 border-t border-gray-100">
                                     <div class="flex justify-between items-center">
-                                        <span class="text-xs text-gray-500">Прогресс чтения</span>
+                                        <span class="text-xs text-gray-500">Прогресс протокола</span>
                                         <span class="text-xs font-medium">[[ book.progress ]]%</span>
                                     </div>
                                     <div class="w-full bg-gray-200 rounded-full h-1.5 mt-1">
@@ -185,12 +185,12 @@
 
                     <div v-else class="bg-white rounded-xl shadow-sm p-12 text-center">
                         <div class="mx-auto w-24 h-24 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
-                            <i class="fas fa-book-open text-indigo-600 text-3xl"></i>
+                            <i class="fas fa-heartbeat text-indigo-600 text-3xl"></i>
                         </div>
-                        <h3 class="text-xl font-medium text-gray-800 mb-2">Ваша библиотека пуста</h3>
-                        <p class="text-gray-600 mb-6">Начните собирать свою коллекцию книг, добавляя их из каталога</p>
+                        <h3 class="text-xl font-medium text-gray-800 mb-2">Ваши наборы пока пусты</h3>
+                        <p class="text-gray-600 mb-6">Начните собирать систему заботы о себе, добавляя товары из каталога</p>
                         <button class="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
-                            <i class="fas fa-book mr-2"></i>Перейти в каталог
+                            <i class="fas fa-heartbeat mr-2"></i>Перейти в каталог
                         </button>
                     </div>
                 </div>
@@ -213,8 +213,8 @@
                         <table class="min-w-full divide-y divide-gray-200">
                             <thead class="bg-gray-50">
                                 <tr>
-                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Книга</th>
-                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Автор</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Товар</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Категория</th>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Цена</th>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Действия</th>
                                 </tr>
@@ -258,9 +258,9 @@
                             <i class="fas fa-heart text-pink-600 text-3xl"></i>
                         </div>
                         <h3 class="text-xl font-medium text-gray-800 mb-2">Ваш список желаний пуст</h3>
-                        <p class="text-gray-600 mb-6">Добавляйте книги, которые хотите приобрести в будущем</p>
+                        <p class="text-gray-600 mb-6">Добавляйте браслеты, БАДы и тесты, которые хотите приобрести в будущем</p>
                         <button class="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
-                            <i class="fas fa-book mr-2"></i>Перейти в каталог
+                            <i class="fas fa-heartbeat mr-2"></i>Перейти в каталог
                         </button>
                     </div>
                 </div>
@@ -365,7 +365,7 @@
                         <h3 class="text-xl font-medium text-gray-800 mb-2">У вас пока нет заказов</h3>
                         <p class="text-gray-600 mb-6">После оформления заказа вы сможете отслеживать его статус здесь</p>
                         <button class="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
-                            <i class="fas fa-book mr-2"></i>Перейти в каталог
+                            <i class="fas fa-heartbeat mr-2"></i>Перейти в каталог
                         </button>
                     </div>
                 </div>

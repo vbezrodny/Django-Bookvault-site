@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block title %} BookVault - Премиум магазин электронных книг {% endblock %}
+{% block title %} BioVault - магазин биохакинга и здоровья {% endblock %}
 
 {% block content %}
         <!-- Главный баннер -->
@@ -11,14 +11,14 @@
                 <div class="flex flex-col md:flex-row items-center">
                     <div class="hero-content md:w-1/2 mb-12 md:mb-0">
                         <h1 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight mb-4">
-                            Откройте для себя свою следующую <span class="text-indigo-600">любимую</span> книгу
+                            Настройте тело и привычки на <span class="text-indigo-600">измеримый</span> прогресс
                         </h1>
                         <p class="text-lg text-gray-600 mb-8">
-                            Исследуйте нашу тщательно подобранную коллекцию премиальных электронных книг всех жанров. Мгновенный доступ в любое время и в любом месте.
+                            Подбирайте умные браслеты, БАДы, тесты, трекеры сна и восстановительные решения для повседневного биохакинга.
                         </p>
                         <div class="flex flex-col space-y-3 w-full sm:w-auto">
                             <button class="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
-                                Смотреть коллекцию
+                                Смотреть каталог
                             </button>
                             <button class="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition">
                                 Узнать больше
@@ -28,7 +28,7 @@
                     <div class="md:w-1/2 flex justify-center">
                         <div class="relative">
                             <img src="{% static 'images/label.avif' %}"
-                                 alt="Стопка книг" class="rounded-xl shadow-xl w-full max-w-md">
+                                 alt="Биохакинг и здоровье" class="rounded-xl shadow-xl w-full max-w-md">
                             <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg">
                                 <div class="flex items-center">
                                     <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-3">
@@ -51,7 +51,7 @@
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold text-gray-800 mb-2">Популярные категории</h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">Найдите свою следующую книгу в наших самых популярных категориях</p>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Найдите решения для сна, энергии, восстановления, питания и контроля здоровья</p>
                 </div>
 
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -61,19 +61,19 @@
                             <i :class="category.icon" class="text-indigo-600"></i>
                         </div>
                         <h3 class="font-medium text-gray-800 mb-1">[[ category.name ]]</h3>
-                        <p class="text-sm text-gray-500">[[ category.count ]] книг</p>
+                        <p class="text-sm text-gray-500">[[ category.count ]] товаров</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Рекомендуемые книги -->
+        <!-- Рекомендуемые товары -->
         <section class="py-16 bg-gray-50">
             <div class="container mx-auto px-6">
                 <div class="flex justify-between items-center mb-12">
                     <div>
-                        <h2 class="text-3xl font-bold text-gray-800 mb-2">Рекомендуемые книги</h2>
-                        <p class="text-gray-600">Избранные подборки от наших редакторов</p>
+                        <h2 class="text-3xl font-bold text-gray-800 mb-2">Рекомендуемые товары</h2>
+                        <p class="text-gray-600">Подборки для энергии, сна и персонального контроля показателей</p>
                     </div>
                     <button class="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition">
                         Смотреть все
@@ -111,8 +111,8 @@
         <section class="py-16 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-2">Что говорят читатели</h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">Не верьте нам на слово - послушайте наших довольных клиентов</p>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">Что говорят клиенты</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Опыт людей, которые уже внедрили биохакинг в ежедневную рутину</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -140,12 +140,12 @@
             <div class="container mx-auto px-6">
                 <div class="flex flex-col md:flex-row items-center justify-between">
                     <div class="md:w-1/2 mb-8 md:mb-0">
-                        <h2 class="text-3xl font-bold mb-4">Готовы начать читать?</h2>
-                        <p class="text-indigo-100 max-w-lg">Присоединяйтесь к тысячам читателей, которые уже нашли свою следующую любимую книгу в BookVault.</p>
+                        <h2 class="text-3xl font-bold mb-4">Готовы прокачать здоровье?</h2>
+                        <p class="text-indigo-100 max-w-lg">Присоединяйтесь к людям, которые отслеживают сон, энергию и восстановление с BioVault.</p>
                     </div>
                     <div class="flex flex-col space-y-3 w-full sm:w-auto">
                         <button class="px-6 py-3 bg-white text-indigo-600 rounded-lg hover:bg-gray-100 transition font-medium">
-                            Смотреть коллекцию
+                            Смотреть каталог
                         </button>
                         <button class="px-6 py-3 border border-white text-white rounded-lg hover:bg-indigo-700 transition">
                             Узнать больше

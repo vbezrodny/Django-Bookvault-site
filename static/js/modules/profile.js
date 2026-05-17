@@ -12,8 +12,8 @@ export function useProfile() {
         avatar: 'https://randomuser.me/api/portraits/men/32.jpg',
         birthDate: '1985-06-15',
         phone: '+7 (912) 345-67-89',
-        bio: 'Любитель классической литературы и научной фантастики. Читаю каждый день перед сном.',
-        favoriteGenres: ['Классика', 'Фантастика', 'История', 'Психология'],
+        bio: 'Интересуюсь сном, восстановлением и мягким биохакингом. Отслеживаю HRV, шаги и качество отдыха.',
+        favoriteGenres: ['Сон', 'Фокус', 'Восстановление', 'Нутрицевтики'],
         profileCompletion: 75
     });
 
@@ -26,49 +26,49 @@ export function useProfile() {
     const userLibrary = ref([
         {
             id: 1,
-            title: 'Молчаливый пациент',
-            author: 'Алекс Михаэлидес',
-            format: 'PDF',
+            title: 'WHOOP 4.0 Health Band',
+            author: 'Трекер восстановления',
+            format: 'Гаджет',
             rating: 4,
             progress: 65,
-            image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80'
+            image: 'https://images.unsplash.com/photo-1576243345690-4e4b79b63288?auto=format&fit=crop&w=800&q=80'
         },
         {
             id: 2,
-            title: 'Атомные привычки',
-            author: 'Джеймс Клир',
-            format: 'EPUB',
+            title: 'Magnesium Sleep Complex',
+            author: 'Нутрицевтик для сна',
+            format: 'БАД',
             rating: 5,
             progress: 100,
-            image: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80'
+            image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=800&q=80'
         },
         {
             id: 3,
-            title: 'Психология денег',
-            author: 'Морган Хаузел',
-            format: 'PDF',
+            title: 'Sleep Recovery Kit',
+            author: 'Набор вечернего режима',
+            format: 'Набор',
             rating: 5,
             progress: 30,
-            image: 'https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80'
+            image: 'https://images.unsplash.com/photo-1511295742362-92c96b1cf484?auto=format&fit=crop&w=800&q=80'
         }
     ]);
 
     const wishlist = ref([
         {
             id: 1,
-            title: '1984',
-            author: 'Джордж Оруэлл',
-            price: 9.99,
-            format: 'EPUB',
-            image: 'https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80'
+            title: 'Glucose Insight Sensor',
+            author: 'Мониторинг метаболизма',
+            price: 39.99,
+            format: 'Сенсор',
+            image: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=800&q=80'
         },
         {
             id: 2,
-            title: 'Убить пересмешника',
-            author: 'Харпер Ли',
-            price: 11.99,
-            format: 'PDF',
-            image: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80'
+            title: 'Vitamin D3 + K2',
+            author: 'Поддержка иммунитета',
+            price: 14.99,
+            format: 'БАД',
+            image: 'https://images.unsplash.com/photo-1550572017-edd951aa8f72?auto=format&fit=crop&w=800&q=80'
         }
     ]);
 
@@ -82,17 +82,17 @@ export function useProfile() {
             items: [
                 {
                     id: 1,
-                    title: 'Молчаливый пациент',
-                    author: 'Алекс Михаэлидес',
-                    price: 12.99,
-                    image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80'
+                    title: 'WHOOP 4.0 Health Band',
+                    author: 'Трекер восстановления',
+                    price: 29.99,
+                    image: 'https://images.unsplash.com/photo-1576243345690-4e4b79b63288?auto=format&fit=crop&w=800&q=80'
                 },
                 {
                     id: 2,
-                    title: 'Атомные привычки',
-                    author: 'Джеймс Клир',
-                    price: 14.99,
-                    image: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80'
+                    title: 'Magnesium Sleep Complex',
+                    author: 'Нутрицевтик для сна',
+                    price: 18.99,
+                    image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=800&q=80'
                 }
             ],
             total: 27.98
@@ -105,10 +105,10 @@ export function useProfile() {
             items: [
                 {
                     id: 3,
-                    title: 'Психология денег',
-                    author: 'Морган Хаузел',
-                    price: 11.99,
-                    image: 'https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80'
+                    title: 'Sleep Recovery Kit',
+                    author: 'Набор вечернего режима',
+                    price: 24.99,
+                    image: 'https://images.unsplash.com/photo-1511295742362-92c96b1cf484?auto=format&fit=crop&w=800&q=80'
                 }
             ],
             total: 11.99
@@ -155,7 +155,7 @@ export function useProfile() {
             price: item.price,
             image: item.image
         });
-        alert(`${item.title} добавлена в корзину!`);
+        alert(`${item.title} добавлен в корзину!`);
     };
 
     const removeFromWishlist = (id) => {

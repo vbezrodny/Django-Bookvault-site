@@ -15,27 +15,27 @@ export function useCheckout() {
     const cart = ref([
         {
             id: 1,
-            title: "Мастер и Маргарита",
-            author: "Михаил Булгаков",
-            price: 599,
+            title: "WHOOP 4.0 Health Band",
+            author: "Трекер восстановления",
+            price: 5990,
             quantity: 1,
-            image: "https://cv9.litres.ru/pub/c/cover_330/68210799.webp"
+            image: "https://images.unsplash.com/photo-1576243345690-4e4b79b63288?auto=format&fit=crop&w=800&q=80"
         },
         {
             id: 2,
-            title: "1984",
-            author: "Джордж Оруэлл",
-            price: 499,
+            title: "Magnesium Sleep Complex",
+            author: "Нутрицевтик для сна",
+            price: 1490,
             quantity: 1,
-            image: "https://cv5.litres.ru/pub/c/cover_330/69397489.webp"
+            image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=800&q=80"
         },
         {
             id: 3,
-            title: "Преступление и наказание",
-            author: "Фёдор Достоевский",
-            price: 399,
+            title: "Glucose Insight Sensor",
+            author: "Мониторинг метаболизма",
+            price: 3990,
             quantity: 1,
-            image: "https://cv6.litres.ru/pub/c/cover_330/170044.webp"
+            image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=800&q=80"
         }
     ]);
 
@@ -86,7 +86,7 @@ export function useCheckout() {
     });
 
     const shippingCost = computed(() => {
-        return 0; // Доставка бесплатная для электронных книг
+        return 0; // Доставка бесплатная для заказов из демо-корзины
     });
 
     const totalItems = computed(() => {
@@ -101,7 +101,7 @@ export function useCheckout() {
 
     const applyPromo = () => {
         // В реальном приложении здесь была бы проверка промокода на сервере
-        if (promoCode.value.toUpperCase() === 'BOOK10') {
+        if (promoCode.value.toUpperCase() === 'BIO10') {
             discount.value = Math.round(subtotal.value * 0.1);
             promoMessage.value = 'Промокод успешно применен! Скидка 10%';
             promoSuccess.value = true;

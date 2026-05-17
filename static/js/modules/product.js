@@ -4,12 +4,6 @@ export function useProduct() {
     const quantity = ref(1);
     const activeTab = ref('description');
 
-    // const addToCart = () => {
-    //     cartItems.value += quantity.value;
-    //     // Здесь можно добавить логику добавления в корзину
-    //     alert(`Добавлено ${quantity.value} книг в корзину`);
-    // };
-
     const increaseQuantity = () => {
         if (quantity.value < 10) {
             quantity.value++;

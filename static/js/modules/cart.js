@@ -21,7 +21,7 @@ export function useCart() {
         showCart.value = true;
 
         // Уведомление о добавлении в корзину
-        alert(`${book.title} добавлена в корзину!`);
+        alert(`${book.title} добавлен в корзину!`);
     };
 
     const removeFromCart = (index) => {

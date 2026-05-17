@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block title %} Каталог книг | BookVault {% endblock %}
+{% block title %} Каталог товаров | BioVault {% endblock %}
 
 {% block styles %}
     <link rel="stylesheet" href="{% static 'css/catalog.css'%}">
@@ -14,8 +14,8 @@
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row items-start md:items-end justify-between">
                 <div>
-                    <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Каталог книг</h1>
-                    <p class="text-gray-600">Найдено [[ filteredBooks.length ]] книг</p>
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Каталог товаров</h1>
+                    <p class="text-gray-600">Найдено [[ filteredBooks.length ]] товаров</p>
                 </div>
                 <div class="mt-4 md:mt-0">
                     <div class="relative">
@@ -86,7 +86,7 @@
                     </div>
                 </div>
 
-                <!-- Сетка книг -->
+                <!-- Сетка товаров -->
                 <div class="w-full md:w-3/4">
                     <div v-if="filteredBooks.length > 0" class="catalog-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         <div v-for="book in paginatedBooks" :key="book.id" class="book-card bg-white rounded-xl overflow-hidden">
@@ -117,8 +117,8 @@
                     </div>
 
                     <div v-else class="bg-white rounded-xl p-12 text-center">
-                        <i class="fas fa-book-open text-5xl text-gray-300 mb-4"></i>
-                        <h3 class="text-xl font-medium text-gray-800 mb-2">Книги не найдены</h3>
+                        <i class="fas fa-heartbeat text-5xl text-gray-300 mb-4"></i>
+                        <h3 class="text-xl font-medium text-gray-800 mb-2">Товары не найдены</h3>
                         <p class="text-gray-600 mb-6">Попробуйте изменить параметры фильтрации</p>
                         <button @click="resetFilters" class="px-6 py=2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
                             Сбросить фильтры

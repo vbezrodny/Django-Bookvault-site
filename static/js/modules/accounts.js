@@ -11,7 +11,7 @@ export function useSignUp() {
 
     const register = () => {
         // В реальном приложении здесь была бы отправка данных на сервер
-        alert('Регистрация успешна! Добро пожаловать в BookVault.');
+        alert('Регистрация успешна! Добро пожаловать в BioVault.');
         form.value = {
             name: '',
             email: '',
@@ -39,7 +39,7 @@ export function useSignIn() {
 
     const login = () => {
         // В реальном приложении здесь была бы отправка данных на сервер
-        alert('Вход выполнен успешно! Добро пожаловать в BookVault.');
+        alert('Вход выполнен успешно! Добро пожаловать в BioVault.');
         form.value = {
             email: '',
             password: '',

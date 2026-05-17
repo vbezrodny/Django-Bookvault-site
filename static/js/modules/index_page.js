@@ -5,39 +5,39 @@ export function useIndexPage() {
     const featuredBooks = ref([
         {
             id: 1,
-            title: 'Молчаливый пациент',
-            author: 'Алекс Михаэлидес',
-            price: 12.99,
+            title: 'WHOOP 4.0 Health Band',
+            author: 'Трекер восстановления',
+            price: 29.99,
             rating: 4,
             reviews: 1243,
-            image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80'
+            image: 'https://images.unsplash.com/photo-1576243345690-4e4b79b63288?auto=format&fit=crop&w=800&q=80'
         },
         {
             id: 2,
-            title: 'Атомные привычки',
-            author: 'Джеймс Клир',
-            price: 14.99,
+            title: 'Omega-3 Ultra',
+            author: 'Нутрицевтик для фокуса',
+            price: 18.99,
             rating: 5,
             reviews: 3421,
-            image: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80'
+            image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=800&q=80'
         },
         {
             id: 3,
-            title: 'Психология денег',
-            author: 'Морган Хаузел',
-            price: 11.99,
+            title: 'Sleep Recovery Kit',
+            author: 'Набор для качества сна',
+            price: 24.99,
             rating: 5,
             reviews: 2103,
-            image: 'https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80'
+            image: 'https://images.unsplash.com/photo-1511295742362-92c96b1cf484?auto=format&fit=crop&w=800&q=80'
         },
         {
             id: 4,
-            title: 'Ученица',
-            author: 'Тара Уэстовер',
-            price: 10.99,
+            title: 'Glucose Insight Sensor',
+            author: 'Мониторинг метаболизма',
+            price: 39.99,
             rating: 4,
             reviews: 1876,
-            image: 'https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80'
+            image: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=800&q=80'
         }
     ]);
 
@@ -45,9 +45,9 @@ export function useIndexPage() {
         {
             id: 1,
             name: 'Сара Джонсон',
-            role: 'Книжный блогер',
+            role: 'Биохакинг-энтузиаст',
             rating: 5,
-            comment: 'BookVault полностью изменил мой опыт чтения. Подборка книг невероятная, а цены непревзойденные.',
+            comment: 'BioVault помог собрать понятный набор для сна и восстановления. Наконец вижу цифры, а не просто угадываю самочувствие.',
             avatar: 'static/images/peoples/sora.jpg'
         },
         {
@@ -55,7 +55,7 @@ export function useIndexPage() {
             name: 'Майкл Чен',
             role: 'Технический предприниматель',
             rating: 5,
-            comment: 'Как занятой профессионал, я ценю мгновенный доступ к бизнес-литературе, которая помогает мне оставаться впереди в моей отрасли.',
+            comment: 'Умный браслет и магний из подборки стали частью вечернего режима. Сон стал стабильнее, а утренние созвоны легче.',
             avatar: 'https://randomuser.me/api/portraits/men/32.jpg'
         },
         {
@@ -63,7 +63,7 @@ export function useIndexPage() {
             name: 'Эмма Родригес',
             role: 'Студентка',
             rating: 4,
-            comment: 'Учебники, которые мне нужны для курсов, здесь намного доступнее, чем где-либо еще. Очень рекомендую!',
+            comment: 'Брала витамин D, омега-3 и трекер воды. Удобно, что все объяснено простым языком и без лишней мистики.',
             avatar: 'https://randomuser.me/api/portraits/women/65.jpg'
         }
     ]);
