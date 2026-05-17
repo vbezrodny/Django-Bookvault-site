@@ -1,0 +1,27 @@
+to activate
+
+tailwind
+npx tailwindcss -i ./static/css/tailwind.css -o ./static/css/tailwind-output.css --watch
+
+cache cleaning
+npx tailwindcss -i ./static/css/tailwind.css -o ./static/css/tailwind-output.css --watch --purge
+
+git
+
+git add .
+git commit -m ".idea ignore
+git push
+
+
+superuser
+admin
+admin@admin.admin
+admin12345
+
+Linda user
+Linda
+Hello45_2%
+
+Alex user
+Alex 
+Helpme23_3@

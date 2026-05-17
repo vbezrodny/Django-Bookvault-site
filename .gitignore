@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/python,pycharm,django,vue,vuejs
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,pycharm,django,vue,vuejs
 
+### PyCharm ###
+.idea
+
 ### Django ###
 *.log
 *.pot
